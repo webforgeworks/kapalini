@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapalini Ghee | Indian Basil Food & Beverages</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:wght@300;400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C8942A;
+    --gold-light: #F0C55A;
+    --gold-pale: #FDF3DC;
+    --cream: #FFF8EE;
+    --deep: #1A0F00;
+    --brown: #5C2D0A;
+    --red: #A0170F;
+    --sky: #DAEEF9;
+    --text: #2E1A00;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAVBAR ─── */
+  nav {
+    position: fixed; top: 36px; width: 100%; z-index: 1000;
+    background: rgba(26,15,0,0.92);
+    backdrop-filter: blur(12px);
+    padding: 14px 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid rgba(200,148,42,0.3);
+    transition: all 0.4s;
+  }
+  nav.scrolled { padding: 10px 5%; top: 0; }
+
+  .logo-wrap { display: flex; align-items: center; gap: 12px; }
+  .logo-icon {
+    width: 44px; height: 44px;
+    background: var(--red);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+  }
+  .logo-text { line-height: 1.1; }
+  .logo-text span:first-child {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    color: var(--gold-light);
+    font-size: 1.3rem; font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .logo-text span:last-child {
+    display: block;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .nav-links { display: flex; gap: 34px; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -4px; left: 0;
+    width: 0; height: 1px; background: var(--gold-light);
+    transition: width 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--deep) !important;
+    padding: 9px 22px !important;
+    border-radius: 2px;
+    font-weight: 700 !important;
+    letter-spacing: 1.5px !important;
+  }
+  .nav-cta::after { display: none !important; }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #0d1b2a 0%, #1a0f00 40%, #2d1000 70%, #0d1b2a 100%);
+    position: relative;
+    display: flex; align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-bg-particles {
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(200,148,42,0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(200,148,42,0.06) 0%, transparent 50%);
+  }
+
+  .stars {
+    position: absolute; inset: 0; overflow: hidden;
+  }
+  .star {
+    position: absolute;
+    width: 4px; height: 4px;
+    background: var(--gold-light);
+    border-radius: 50%;
+    animation: twinkle var(--dur, 3s) ease-in-out infinite;
+    opacity: 0;
+  }
+
+  @keyframes twinkle {
+    0%,100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 0.8; transform: scale(1.2); }
+  }
+
+  .floating-garland {
+    position: absolute; top: 8%; left: 0; right: 0;
+    height: 80px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 80'%3E%3Cpath d='M0,40 Q100,10 200,40 Q300,70 400,40 Q500,10 600,40 Q700,70 800,40' fill='none' stroke='%23C8942A' stroke-width='1.5' opacity='0.4'/%3E%3C/svg%3E") repeat-x;
+    background-size: 800px 80px;
+    animation: garlandSwing 8s ease-in-out infinite;
+  }
+
+  @keyframes garlandSwing {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+  }
+
+  .hero-content {
+    position: relative; z-index: 10;
+    padding: 120px 8% 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero-left { animation: heroFadeUp 1.2s ease forwards; }
+
+  @keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(60px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(200,148,42,0.15);
+    border: 1px solid rgba(200,148,42,0.4);
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 24px;
+    animation: heroFadeUp 1s 0.2s ease both;
+  }
+  .hero-badge span { color: var(--gold-light); font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    color: white;
+    margin-bottom: 8px;
+    animation: heroFadeUp 1s 0.3s ease both;
+  }
+  .hero-title .gold { color: var(--gold-light); }
+  .hero-title .italic { font-style: italic; }
+
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    color: rgba(255,255,255,0.6);
+    margin: 20px 0 32px;
+    line-height: 1.6;
+    animation: heroFadeUp 1s 0.4s ease both;
+  }
+
+  .hero-btns {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    animation: heroFadeUp 1s 0.5s ease both;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--deep);
+    padding: 14px 32px;
+    border: none;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(200,148,42,0.4); }
+
+  .btn-outline {
+    background: transparent;
+    color: white;
+    padding: 14px 32px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 3px;
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
+
+  .hero-stats {
+    display: flex; gap: 40px; margin-top: 48px;
+    animation: heroFadeUp 1s 0.6s ease both;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--gold-light);
+    display: block;
+  }
+  .stat-label { color: rgba(255,255,255,0.5); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; }
+
+  .hero-right {
+    position: relative;
+    display: flex; justify-content: center; align-items: center;
+    animation: heroFadeIn 1.5s 0.4s ease both;
+  }
+
+  @keyframes heroFadeIn {
+    from { opacity: 0; transform: scale(0.9) rotate(-3deg); }
+    to { opacity: 1; transform: scale(1) rotate(0); }
+  }
+
+  .hero-product-glow {
+    position: absolute;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(200,148,42,0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: glowPulse 4s ease-in-out infinite;
+  }
+
+  @keyframes glowPulse {
+    0%,100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.15); opacity: 1; }
+  }
+
+  .hero-tin {
+    position: relative; z-index: 2;
+    width: 260px;
+    background: linear-gradient(145deg, #e8e8e8, #c8c8c8, #b0b0b0);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow:
+      8px 8px 30px rgba(0,0,0,0.6),
+      inset 2px 2px 6px rgba(255,255,255,0.5),
+      0 0 60px rgba(200,148,42,0.2);
+    animation: float 5s ease-in-out infinite;
+    text-align: center;
+  }
+
+  @keyframes float {
+    0%,100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-12px) rotate(1deg); }
+    66% { transform: translateY(-6px) rotate(-0.5deg); }
+  }
+
+  .tin-label {
+    background: linear-gradient(135deg, var(--red), #8B0000);
+    border-radius: 8px;
+    padding: 16px 12px;
+    margin-bottom: 10px;
+  }
+  .tin-brand {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+  }
+  .tin-product {
+    color: rgba(255,255,255,0.85);
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .tin-cow-area {
+    font-size: 4rem;
+    padding: 10px 0;
+  }
+  .tin-shine {
+    position: absolute;
+    top: 10px; left: 10px; right: 10px;
+    height: 40px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.3), transparent);
+    border-radius: 10px 10px 0 0;
+  }
+
+  .floating-stars-hero {
+    position: absolute;
+    width: 100%; height: 100%;
+  }
+  .fstar {
+    position: absolute;
+    font-size: 1.8rem;
+    animation: starFloat var(--d,6s) ease-in-out infinite;
+    opacity: 0.8;
+  }
+  @keyframes starFloat {
+    0%,100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(15deg); }
+  }
+
+  .diya {
+    position: absolute;
+    bottom: 20px;
+    font-size: 2.5rem;
+    animation: diyaFlicker 2s ease-in-out infinite;
+  }
+  .diya.left { left: -40px; }
+  .diya.right { right: -40px; }
+
+  @keyframes diyaFlicker {
+    0%,100% { filter: brightness(1); }
+    50% { filter: brightness(1.3) drop-shadow(0 0 8px orange); }
+  }
+
+  /* ─── SECTION BASE ─── */
+  section { padding: 100px 8%; scroll-margin-top: 110px; }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .section-title .italic { font-style: italic; color: var(--gold); }
+  .section-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    color: #6B4E2A;
+    line-height: 1.7;
+    max-width: 560px;
+  }
+
+  .divider {
+    display: flex; align-items: center; gap: 16px;
+    margin: 28px 0;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .divider span { color: var(--gold); font-size: 1.2rem; }
+
+  /* ─── ABOUT ─── */
+  .about {
+    background: linear-gradient(135deg, #FFF8EE 0%, #FDF0D5 100%);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .about-card {
+    background: white;
+    border-radius: 4px;
+    padding: 40px;
+    box-shadow: 20px 20px 60px rgba(92,45,10,0.15);
+    position: relative;
+    overflow: hidden;
+  }
+  .about-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--red), var(--gold), var(--red));
+  }
+
+  .about-icon-big {
+    font-size: 5rem;
+    display: block;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .about-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 16px;
+    color: var(--brown);
+  }
+
+  .about-card p {
+    text-align: center;
+    color: #6B4E2A;
+    line-height: 1.7;
+  }
+
+  .about-badge-float {
+    position: absolute;
+    bottom: -20px; right: -20px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--deep);
+    padding: 16px 20px;
+    border-radius: 4px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(200,148,42,0.4);
+  }
+  .about-badge-float strong { display: block; font-size: 1.8rem; font-family: 'Playfair Display', serif; }
+  .about-badge-float span { font-size: 0.7rem; letter-spacing: 2px; }
+
+  .about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 28px;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .feature-icon {
+    width: 40px; height: 40px;
+    background: var(--gold-pale);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    border: 1px solid rgba(200,148,42,0.3);
+  }
+  .feature-text strong {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--brown);
+    margin-bottom: 2px;
+  }
+  .feature-text span {
+    font-size: 0.8rem;
+    color: #8B6040;
+  }
+
+  /* ─── PRODUCTS ─── */
+  .products {
+    background: var(--deep);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .products::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C8942A' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .products-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+  }
+  .products-header .section-title { color: white; }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .product-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200,148,42,0.2);
+    border-radius: 4px;
+    padding: 36px 28px;
+    text-align: center;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .product-card::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(200,148,42,0.08), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .product-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+    box-shadow: 0 20px 60px rgba(200,148,42,0.2);
+  }
+  .product-card:hover::after { opacity: 1; }
+
+  .product-card.featured {
+    border-color: var(--gold);
+    background: rgba(200,148,42,0.08);
+  }
+  .product-badge {
+    position: absolute; top: 16px; right: 16px;
+    background: var(--gold);
+    color: var(--deep);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+
+  .product-visual {
+    font-size: 5rem;
+    margin: 0 auto 20px;
+    display: block;
+    filter: drop-shadow(0 4px 12px rgba(200,148,42,0.3));
+    transition: transform 0.3s;
+  }
+  .product-card:hover .product-visual { transform: scale(1.1) translateY(-4px); }
+
+  .product-name {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 6px;
+  }
+  .product-size {
+    color: var(--gold);
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  .product-desc {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .product-price {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold-light);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .product-price span { font-size: 0.8rem; color: rgba(255,255,255,0.4); font-family: 'Lato'; font-weight: 300; }
+
+  .product-btn {
+    display: block;
+    margin-top: 18px;
+    padding: 10px;
+    border: 1px solid rgba(200,148,42,0.4);
+    background: transparent;
+    color: var(--gold-light);
+    font-size: 0.78rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.3s;
+    width: 100%;
+  }
+  .product-btn:hover {
+    background: var(--gold);
+    color: var(--deep);
+    border-color: var(--gold);
+  }
+
+  /* ─── WHY GHEE ─── */
+  .benefits {
+    background: linear-gradient(135deg, #FFF8EE, #FDF0D5);
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .benefit-card {
+    background: white;
+    border-radius: 4px;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(92,45,10,0.08);
+    border-bottom: 3px solid transparent;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+  }
+  .benefit-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, transparent 60%, rgba(200,148,42,0.05));
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .benefit-card:hover {
+    transform: translateY(-6px);
+    border-bottom-color: var(--gold);
+    box-shadow: 0 16px 40px rgba(92,45,10,0.15);
+  }
+  .benefit-card:hover::before { opacity: 1; }
+
+  .benefit-icon { font-size: 2.8rem; margin-bottom: 16px; display: block; }
+  .benefit-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--brown);
+    margin-bottom: 10px;
+  }
+  .benefit-text { font-size: 0.85rem; color: #8B6040; line-height: 1.6; }
+
+  /* ─── PROCESS ─── */
+  .process {
+    background: #FFF8EE;
+  }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 60px;
+    position: relative;
+  }
+
+  .process-grid::before {
+    content: '';
+    position: absolute;
+    top: 40px; left: 12%; right: 12%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    z-index: 0;
+  }
+
+  .process-step {
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-circle {
+    width: 80px; height: 80px;
+    background: white;
+    border: 3px solid var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 24px;
+    box-shadow: 0 4px 20px rgba(200,148,42,0.3);
+    transition: all 0.4s;
+  }
+  .process-step:hover .step-circle {
+    background: var(--gold);
+    transform: scale(1.1);
+  }
+
+  .step-num {
+    position: absolute;
+    top: -8px; right: calc(50% - 48px);
+    width: 22px; height: 22px;
+    background: var(--red);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .step-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--brown);
+    margin-bottom: 8px;
+  }
+  .step-text { font-size: 0.82rem; color: #8B6040; line-height: 1.5; }
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonials {
+    background: linear-gradient(135deg, #1A0F00, #2D1500);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonials::before {
+    content: '❝';
+    position: absolute;
+    top: -20px; left: 5%;
+    font-size: 20rem;
+    color: rgba(200,148,42,0.04);
+    font-family: serif;
+    line-height: 1;
+  }
+
+  .testimonials .section-title { color: white; }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .testimonial-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200,148,42,0.2);
+    border-radius: 4px;
+    padding: 32px;
+    transition: all 0.4s;
+  }
+  .testimonial-card:hover {
+    border-color: var(--gold);
+    background: rgba(200,148,42,0.07);
+    transform: translateY(-4px);
+  }
+
+  .stars-rating { color: var(--gold); font-size: 0.9rem; margin-bottom: 16px; }
+  .testimonial-text {
+    color: rgba(255,255,255,0.75);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    font-style: italic;
+  }
+  .testimonial-author {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .author-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--brown));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+  }
+  .author-name { color: white; font-weight: 600; font-size: 0.9rem; }
+  .author-loc { color: rgba(255,255,255,0.4); font-size: 0.78rem; }
+
+  /* ─── CONTACT ─── */
+  .contact {
+    background: var(--gold-pale);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .contact-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--brown);
+    margin-bottom: 24px;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+  }
+  .contact-item-icon {
+    width: 44px; height: 44px;
+    background: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 12px rgba(92,45,10,0.1);
+    flex-shrink: 0;
+  }
+  .contact-item-text strong { display: block; color: var(--brown); font-size: 0.85rem; margin-bottom: 2px; }
+  .contact-item-text span { color: #8B6040; font-size: 0.9rem; }
+
+  .contact-form {
+    background: white;
+    border-radius: 4px;
+    padding: 40px;
+    box-shadow: 0 8px 40px rgba(92,45,10,0.12);
+  }
+  .contact-form h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--brown);
+    margin-bottom: 24px;
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { margin-bottom: 18px; }
+  .form-group label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--brown);
+    margin-bottom: 6px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid rgba(92,45,10,0.15);
+    border-radius: 3px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    background: #FDFAF5;
+    transition: border-color 0.3s;
+    outline: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--gold); }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, var(--brown), var(--red));
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(92,45,10,0.4); }
+
+  /* ─── CERTIFICATIONS ─── */
+  .certifications {
+    background: white;
+    padding: 60px 8%;
+    text-align: center;
+  }
+  .cert-label { font-size: 0.7rem; letter-spacing: 5px; color: #aaa; text-transform: uppercase; margin-bottom: 32px; }
+  .cert-strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+  .cert-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .cert-badge {
+    width: 70px; height: 70px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+    border: 2px solid var(--gold);
+    background: var(--gold-pale);
+  }
+  .cert-name { font-size: 0.7rem; letter-spacing: 1.5px; color: #8B6040; text-transform: uppercase; font-weight: 700; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--deep);
+    color: rgba(255,255,255,0.6);
+    padding: 60px 8% 30px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+
+  .footer-brand .logo-text span:first-child { font-size: 1.6rem; }
+  .footer-about {
+    color: rgba(255,255,255,0.45);
+    font-size: 0.85rem;
+    line-height: 1.7;
+    margin-top: 16px;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .social-btn {
+    width: 38px; height: 38px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: 1px solid rgba(200,148,42,0.2);
+  }
+  .social-btn:hover { background: var(--gold); border-color: var(--gold); }
+
+  .footer-col h4 {
+    color: var(--gold-light);
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 10px; }
+  .footer-links a {
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--gold-light); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-bottom p { font-size: 0.78rem; }
+  .footer-bottom .gold-text { color: var(--gold); }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ─── STICKY CTA ─── */
+  .sticky-cta {
+    position: fixed;
+    bottom: 30px; right: 30px;
+    z-index: 999;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--deep);
+    padding: 14px 24px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 30px rgba(200,148,42,0.5);
+    cursor: pointer;
+    text-decoration: none;
+    animation: ctaPop 3s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  @keyframes ctaPop {
+    0%,100% { transform: scale(1) translateY(0); box-shadow: 0 8px 30px rgba(200,148,42,0.5); }
+    50% { transform: scale(1.03) translateY(-3px); box-shadow: 0 14px 40px rgba(200,148,42,0.7); }
+  }
+
+  /* ─── COUNTER ANIMATION ─── */
+  .counter { display: inline-block; }
+
+  /* ─── TOP BANNER ─── */
+  .top-banner {
+    background: linear-gradient(90deg, var(--red), var(--brown), var(--red));
+    background-size: 200% 100%;
+    animation: bannerScroll 6s linear infinite;
+    padding: 8px 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 1001;
+  }
+  @keyframes bannerScroll {
+    0% { background-position: 0%; }
+    100% { background-position: 200%; }
+  }
+  .banner-track {
+    display: flex;
+    gap: 60px;
+    white-space: nowrap;
+    animation: tickerMove 20s linear infinite;
+  }
+  @keyframes tickerMove {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .banner-item {
+    color: white;
+    font-size: 0.78rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .banner-dot { color: var(--gold-light); font-size: 1rem; }
+
+  @media (max-width: 900px) {
+    .hero-content, .about-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr; }
+    .products-grid, .testimonials-grid { grid-template-columns: 1fr 1fr; }
+    .benefits-grid, .process-grid { grid-template-columns: 1fr 1fr; }
+    .process-grid::before { display: none; }
+    .nav-links { display: none; }
+    .hero-right { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BANNER -->
+<div class="top-banner">
+  <div class="banner-track">
+    <span class="banner-item"><span class="banner-dot">✦</span> 100% Pure Desi Ghee</span>
+    <span class="banner-item"><span class="banner-dot">✦</span> Traditional Bilona Method</span>
+    <span class="banner-item"><span class="banner-dot">✦</span> FSSAI Certified</span>
+    <span class="banner-item"><span class="banner-dot">✦</span> Pan India Delivery</span>
+    <span class="banner-item"><span class="banner-dot">✦</span> Wholesale & Retail Available</span>
+    <span class="banner-item"><span class="banner-dot">✦</span> 100% Pure Desi Ghee</span>
+    <span class="banner-item"><span class="banner-dot">✦</span> Traditional Bilona Method</span>
+    <span class="banner-item"><span class="banner-dot">✦</span> FSSAI Certified</span>
+    <span class="banner-item"><span class="banner-dot">✦</span> Pan India Delivery</span>
+    <span class="banner-item"><span class="banner-dot">✦</span> Wholesale & Retail Available</span>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="logo-wrap">
+    <div class="logo-icon">🐄</div>
+    <div class="logo-text">
+      <span>Kapalini</span>
+      <span>Indian Basil Food & Beverages</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#benefits">Benefits</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Get Quote</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-particles"></div>
+  <div class="stars" id="starsContainer"></div>
+  <div class="floating-garland"></div>
+
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span>✦ Pure · Natural · Traditional ✦</span>
+      </div>
+      <h1 class="hero-title">
+        The Golden<br>
+        <span class="gold italic">Goodness</span><br>
+        of Ghee
+      </h1>
+      <p class="hero-tagline">
+        Kapalini Shudh Desi Ghee — crafted with ancient wisdom,<br>
+        purity you can taste, nourishment you can feel.
+      </p>
+      <div class="hero-btns">
+        <a href="#products" class="btn-primary">Explore Products</a>
+        <a href="#contact" class="btn-outline">Bulk Enquiry</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-count="15">0</span>
+          <span class="stat-label">Years Legacy</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="50000">0</span>
+          <span class="stat-label">Happy Homes</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="100">0</span>
+          <span class="stat-label">% Pure</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-product-glow"></div>
+      <div class="floating-stars-hero">
+        <span class="fstar" style="top:5%;left:10%;--d:5s">⭐</span>
+        <span class="fstar" style="top:15%;right:5%;--d:7s">✨</span>
+        <span class="fstar" style="top:70%;left:5%;--d:6s">⭐</span>
+        <span class="fstar" style="bottom:10%;right:10%;--d:8s">✨</span>
+      </div>
+      <div class="diya left">🪔</div>
+      <div class="diya right">🪔</div>
+      <div class="hero-tin">
+        <div class="tin-shine"></div>
+        <div class="tin-label">
+          <div class="tin-brand">Kapalini</div>
+          <div class="tin-product">Shudh Desi Ghee</div>
+        </div>
+        <div class="tin-cow-area">🐄</div>
+        <div style="font-size:0.7rem;color:#888;letter-spacing:2px;">PREMIUM · PURE · NATURAL</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS STRIP -->
+<div class="certifications">
+  <div class="cert-label">Trusted & Certified</div>
+  <div class="cert-strip">
+    <div class="cert-item">
+      <div class="cert-badge">🏛️</div>
+      <div class="cert-name">FSSAI</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-badge">🌿</div>
+      <div class="cert-name">Natural</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-badge">✅</div>
+      <div class="cert-name">ISO 9001</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-badge">🐄</div>
+      <div class="cert-name">Cow Ghee</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-badge">🕉️</div>
+      <div class="cert-name">Vegetarian</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-badge">🌾</div>
+      <div class="cert-name">No Additives</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-visual reveal">
+      <div class="about-card">
+        <span class="about-icon-big">🐄</span>
+        <h3>Indian Basil Food & Beverages</h3>
+        <p>Manufacturer and supplier of the finest Kapalini Shudh Desi Ghee, rooted in the rich dairy traditions of India. Every tin carries our promise of purity, quality, and authentic taste.</p>
+        <div class="divider"><span>✦</span></div>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:var(--gold);">"Where tradition meets trust — every drop tells a story of purity."</p>
+        <div class="about-badge-float">
+          <strong>15+</strong>
+          <span>Years of Trust</span>
+        </div>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <div class="section-label">Our Story</div>
+      <h2 class="section-title">Pure Ghee,<br>Pure <span class="italic">Promise</span></h2>
+      <p class="section-sub">At Indian Basil Food & Beverages, we are committed to delivering the highest quality Desi Ghee under our beloved Kapalini brand. Our ghee is made from the milk of indigenous Indian cows, processed using traditional methods that preserve all its natural goodness.</p>
+      <div class="about-features">
+        <div class="feature-item">
+          <div class="feature-icon">🌅</div>
+          <div class="feature-text">
+            <strong>Farm to Table</strong>
+            <span>Direct sourcing from trusted dairy farms</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🧑‍🍳</div>
+          <div class="feature-text">
+            <strong>Traditional Process</strong>
+            <span>Bilona & slow-cooked method</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📦</div>
+          <div class="feature-text">
+            <strong>Multiple Pack Sizes</strong>
+            <span>500ml to 15kg tin available</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🚚</div>
+          <div class="feature-text">
+            <strong>Pan India Delivery</strong>
+            <span>Retail & wholesale distribution</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="products-header reveal">
+    <div class="section-label" style="color:var(--gold);">Our Range</div>
+    <h2 class="section-title">Kapalini <span class="italic">Products</span></h2>
+    <div style="color:rgba(255,255,255,0.5);font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin-top:12px;">Choose the perfect pack for your household or business</div>
+  </div>
+
+  <div class="products-grid">
+    <div class="product-card reveal reveal-delay-1">
+      <span class="product-visual">🫙</span>
+      <div class="product-name">Kapalini Desi Ghee</div>
+      <div class="product-size">500 ML</div>
+      <div class="product-desc">Ideal for daily family use. Rich aroma, golden colour, and authentic taste that elevates every meal.</div>
+      <div class="product-price">₹320 <span>/ jar</span></div>
+      <button class="product-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Enquire Now</button>
+    </div>
+
+    <div class="product-card featured reveal reveal-delay-2">
+      <div class="product-badge">BESTSELLER</div>
+      <span class="product-visual">🥫</span>
+      <div class="product-name">Kapalini Desi Ghee</div>
+      <div class="product-size">1 KG TIN</div>
+      <div class="product-desc">Our most popular pack. Perfect balance of value and volume for regular ghee lovers and small businesses.</div>
+      <div class="product-price">₹580 <span>/ tin</span></div>
+      <button class="product-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Enquire Now</button>
+    </div>
+
+    <div class="product-card reveal reveal-delay-3">
+      <span class="product-visual">🛢️</span>
+      <div class="product-name">Kapalini Desi Ghee</div>
+      <div class="product-size">5 KG TIN</div>
+      <div class="product-desc">For hotels, restaurants, caterers and large families. Best-in-class purity at bulk-friendly pricing.</div>
+      <div class="product-price">₹2,600 <span>/ tin</span></div>
+      <button class="product-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Enquire Now</button>
+    </div>
+
+    <div class="product-card reveal reveal-delay-1">
+      <span class="product-visual">🏭</span>
+      <div class="product-name">Kapalini Desi Ghee</div>
+      <div class="product-size">15 KG TIN</div>
+      <div class="product-desc">Industrial and wholesale supply. Consistent quality, competitive pricing, and reliable delivery timelines.</div>
+      <div class="product-price">Get Quote <span>/ tin</span></div>
+      <button class="product-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Enquire Now</button>
+    </div>
+
+    <div class="product-card reveal reveal-delay-2">
+      <span class="product-visual">📦</span>
+      <div class="product-name">Kapalini Ghee Carton</div>
+      <div class="product-size">200 ML × 12</div>
+      <div class="product-desc">Gift-ready and retail-friendly. Premium packaging for festive gifting and modern retail shelves.</div>
+      <div class="product-price">₹2,200 <span>/ carton</span></div>
+      <button class="product-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Enquire Now</button>
+    </div>
+
+    <div class="product-card reveal reveal-delay-3">
+      <span class="product-visual">🤝</span>
+      <div class="product-name">Wholesale / OEM</div>
+      <div class="product-size">Custom Orders</div>
+      <div class="product-desc">Private label, custom packaging, and white-label solutions available. Let's build your brand together.</div>
+      <div class="product-price">Custom <span>pricing</span></div>
+      <button class="product-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Talk to Us</button>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits" id="benefits">
+  <div style="text-align:center;max-width:600px;margin:0 auto;" class="reveal">
+    <div class="section-label">Health & Nutrition</div>
+    <h2 class="section-title">Why Choose <span class="italic">Desi Ghee?</span></h2>
+    <p class="section-sub" style="margin:0 auto;">Rich in nutrients, rooted in Ayurveda — Kapalini Ghee is not just an ingredient, it's a daily ritual of wellness.</p>
+  </div>
+
+  <div class="benefits-grid">
+    <div class="benefit-card reveal reveal-delay-1">
+      <span class="benefit-icon">💛</span>
+      <div class="benefit-title">Rich in Healthy Fats</div>
+      <div class="benefit-text">Packed with Omega-3, Omega-9, and CLA — essential fatty acids that support brain and heart health.</div>
+    </div>
+    <div class="benefit-card reveal reveal-delay-2">
+      <span class="benefit-icon">🦴</span>
+      <div class="benefit-title">Bone Strength</div>
+      <div class="benefit-text">High in Vitamin K2 and D which aid calcium absorption, keeping bones and teeth strong and healthy.</div>
+    </div>
+    <div class="benefit-card reveal reveal-delay-3">
+      <span class="benefit-icon">🧠</span>
+      <div class="benefit-title">Brain Power</div>
+      <div class="benefit-text">Ghee is a brain food — ancient Ayurvedic texts prescribe it for memory, intelligence, and mental clarity.</div>
+    </div>
+    <div class="benefit-card reveal reveal-delay-4">
+      <span class="benefit-icon">🔥</span>
+      <div class="benefit-title">High Smoke Point</div>
+      <div class="benefit-text">With a smoke point of 250°C, Kapalini Ghee is the safest and most stable fat for Indian cooking.</div>
+    </div>
+    <div class="benefit-card reveal reveal-delay-1">
+      <span class="benefit-icon">🌿</span>
+      <div class="benefit-title">Gut Friendly</div>
+      <div class="benefit-text">Rich in butyric acid which nourishes intestinal walls, aids digestion, and reduces inflammation.</div>
+    </div>
+    <div class="benefit-card reveal reveal-delay-2">
+      <span class="benefit-icon">✨</span>
+      <div class="benefit-title">Skin & Hair</div>
+      <div class="benefit-text">Vitamins A and E in ghee deeply nourish skin and hair, used in beauty and Ayurvedic therapies.</div>
+    </div>
+    <div class="benefit-card reveal reveal-delay-3">
+      <span class="benefit-icon">🕉️</span>
+      <div class="benefit-title">Sattvic & Sacred</div>
+      <div class="benefit-text">Used in yagnas, pujas, and Ayurvedic medicine for millennia — a food of spiritual significance.</div>
+    </div>
+    <div class="benefit-card reveal reveal-delay-4">
+      <span class="benefit-icon">🥗</span>
+      <div class="benefit-title">Lactose Free</div>
+      <div class="benefit-text">Ghee is virtually lactose and casein free — suitable for people with dairy sensitivities.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div style="text-align:center;" class="reveal">
+    <div class="section-label">How It's Made</div>
+    <h2 class="section-title">From Milk to <span class="italic">Golden Ghee</span></h2>
+  </div>
+
+  <div class="process-grid">
+    <div class="process-step reveal reveal-delay-1">
+      <div class="step-circle">
+        🐄
+        <div class="step-num">1</div>
+      </div>
+      <div class="step-title">Milk Collection</div>
+      <div class="step-text">Fresh A2 milk collected daily from indigenous Indian cows raised on natural fodder at trusted partner farms.</div>
+    </div>
+    <div class="process-step reveal reveal-delay-2">
+      <div class="step-circle">
+        🥛
+        <div class="step-num">2</div>
+      </div>
+      <div class="step-title">Curd & Churning</div>
+      <div class="step-text">Milk is set into curd and slow-churned using traditional Bilona method to extract pure white butter.</div>
+    </div>
+    <div class="process-step reveal reveal-delay-3">
+      <div class="step-circle">
+        🔥
+        <div class="step-num">3</div>
+      </div>
+      <div class="step-title">Slow Cooking</div>
+      <div class="step-text">Butter is simmered on low flame until water evaporates, leaving pure golden ghee with a signature aroma.</div>
+    </div>
+    <div class="process-step reveal reveal-delay-4">
+      <div class="step-circle">
+        📦
+        <div class="step-num">4</div>
+      </div>
+      <div class="step-title">Pack & Deliver</div>
+      <div class="step-text">Quality tested, hygienically packed in airtight tins, and dispatched with care to your doorstep across India.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div style="text-align:center;max-width:600px;margin:0 auto 0;" class="reveal">
+    <div class="section-label" style="color:var(--gold);">What People Say</div>
+    <h2 class="section-title">Loved by <span class="italic">Thousands</span></h2>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal reveal-delay-1">
+      <div class="stars-rating">★★★★★</div>
+      <div class="testimonial-text">"The aroma of Kapalini Ghee fills our entire kitchen the moment we open the tin. My mother-in-law, who is very particular about ghee quality, approves of it completely!"</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">P</div>
+        <div>
+          <div class="author-name">Priya Sharma</div>
+          <div class="author-loc">Delhi, NCR</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-2">
+      <div class="stars-rating">★★★★★</div>
+      <div class="testimonial-text">"We use Kapalini Ghee in our restaurant kitchen. The high smoke point, consistent quality, and bulk pricing made it the obvious choice for us. Highly recommended!"</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">R</div>
+        <div>
+          <div class="author-name">Ramesh Agarwal</div>
+          <div class="author-loc">Restaurant Owner, Jaipur</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-3">
+      <div class="stars-rating">★★★★★</div>
+      <div class="testimonial-text">"Ordered the wholesale tin for our sweet shop. The ghee is pure, the texture is perfect, and our customers can taste the difference. Will keep ordering from Kapalini!"</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">M</div>
+        <div>
+          <div class="author-name">Mahesh Mittal</div>
+          <div class="author-loc">Mittal Sweets, Lucknow</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-1">
+      <div class="stars-rating">★★★★★</div>
+      <div class="testimonial-text">"My Ayurvedic doctor recommended switching to pure desi ghee. Kapalini is exactly what he prescribed — natural, unprocessed, and full of goodness. My digestion has improved!"</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">A</div>
+        <div>
+          <div class="author-name">Anita Joshi</div>
+          <div class="author-loc">Pune, Maharashtra</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-2">
+      <div class="stars-rating">★★★★★</div>
+      <div class="testimonial-text">"The packaging is excellent — the tins are sturdy and properly sealed. Got the 5kg tin for festivals and gifted some too. Everyone loved the quality and the brand presentation."</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">S</div>
+        <div>
+          <div class="author-name">Suresh Verma</div>
+          <div class="author-loc">Ahmedabad, Gujarat</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-3">
+      <div class="stars-rating">★★★★★</div>
+      <div class="testimonial-text">"As a distributor, I appreciate the consistent quality batch after batch. My retailers love the product and the demand keeps growing. Kapalini is a brand I'm proud to distribute."</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">V</div>
+        <div>
+          <div class="author-name">Vijay Kapoor</div>
+          <div class="author-loc">Distributor, Mumbai</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div style="text-align:center;margin-bottom:56px;" class="reveal">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Partner with <span class="italic">Kapalini</span></h2>
+    <p class="section-sub" style="margin:0 auto;">Whether you're a retailer, distributor, hotel, or individual — we'd love to serve you.</p>
+  </div>
+
+  <div class="contact-grid">
+    <div class="reveal">
+      <h3>Indian Basil Food & Beverages</h3>
+      <div class="contact-item">
+        <div class="contact-item-icon">📍</div>
+        <div class="contact-item-text">
+          <strong>Address</strong>
+          <span>Kapalini Ghee Factory, Industrial Area,<br>India</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">📞</div>
+        <div class="contact-item-text">
+          <strong>Phone / WhatsApp</strong>
+          <span>+91 XXXXX XXXXX</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">✉️</div>
+        <div class="contact-item-text">
+          <strong>Email</strong>
+          <span>info@kapalini.com</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">⏰</div>
+        <div class="contact-item-text">
+          <strong>Business Hours</strong>
+          <span>Mon–Sat: 9:00 AM – 6:00 PM</span>
+        </div>
+      </div>
+
+      <div style="margin-top:32px;">
+        <strong style="display:block;color:var(--brown);font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;">Follow Us</strong>
+        <div style="display:flex;gap:12px;">
+          <div class="social-btn">📘</div>
+          <div class="social-btn">📸</div>
+          <div class="social-btn">🐦</div>
+          <div class="social-btn">▶️</div>
+        </div>
+      </div>
+
+      <div style="margin-top:32px;background:linear-gradient(135deg,var(--brown),var(--red));border-radius:4px;padding:24px;color:white;">
+        <div style="font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:8px;">🤝 Dealership Available</div>
+        <div style="font-size:0.85rem;opacity:0.85;line-height:1.6;">We are actively looking for distributors and dealers across India. Join the Kapalini family and grow your business with a trusted, premium ghee brand.</div>
+      </div>
+    </div>
+
+    <div class="contact-form reveal reveal-delay-2">
+      <h3>Send an Enquiry</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Full Name">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+91 XXXXX XXXXX">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label>Enquiry Type</label>
+        <select>
+          <option>Select Type</option>
+          <option>Retail Purchase</option>
+          <option>Wholesale / Bulk Order</option>
+          <option>Distributorship</option>
+          <option>Private Label / OEM</option>
+          <option>General Enquiry</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Product</label>
+          <select>
+            <option>Select Product</option>
+            <option>500ml Jar</option>
+            <option>1 KG Tin</option>
+            <option>5 KG Tin</option>
+            <option>15 KG Tin</option>
+            <option>Custom / OEM</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Quantity (approx.)</label>
+          <input type="text" placeholder="e.g. 100 tins/month">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Tell us about your requirements..."></textarea>
+      </div>
+      <button class="submit-btn" onclick="handleSubmit()">🚀 Send Enquiry Now</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="logo-wrap footer-brand">
+        <div class="logo-icon">🐄</div>
+        <div class="logo-text">
+          <span>Kapalini</span>
+          <span>Indian Basil Food & Beverages</span>
+        </div>
+      </div>
+      <div class="footer-about">
+        Bringing the purest Desi Ghee to homes and businesses across India. Rooted in tradition, committed to quality, trusted by thousands.
+      </div>
+      <div class="footer-social">
+        <div class="social-btn">📘</div>
+        <div class="social-btn">📸</div>
+        <div class="social-btn">🐦</div>
+        <div class="social-btn">▶️</div>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul class="footer-links">
+        <li><a href="#products">500ml Jar</a></li>
+        <li><a href="#products">1 KG Tin</a></li>
+        <li><a href="#products">5 KG Tin</a></li>
+        <li><a href="#products">15 KG Tin</a></li>
+        <li><a href="#products">Wholesale</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul class="footer-links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#benefits">Health Benefits</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Dealership</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul class="footer-links">
+        <li><a href="#">+91 XXXXX XXXXX</a></li>
+        <li><a href="#">info@kapalini.com</a></li>
+        <li><a href="#">WhatsApp Us</a></li>
+        <li><a href="#">Bulk Orders</a></li>
+        <li><a href="#">Distributorship</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 <span class="gold-text">Indian Basil Food & Beverages</span>. All rights reserved. | Kapalini® is a registered brand.</p>
+    <p>Made with <span style="color:#e74c3c;">♥</span> in India 🇮🇳</p>
+  </div>
+</footer>
+
+<!-- STICKY CTA -->
+<a href="#contact" class="sticky-cta">📞 Get Bulk Quote</a>
+
+<script>
+  // Create stars
+  const starsContainer = document.getElementById('starsContainer');
+  for (let i = 0; i < 60; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.cssText = `
+      left: ${Math.random() * 100}%;
+      top: ${Math.random() * 100}%;
+      --dur: ${2 + Math.random() * 4}s;
+      animation-delay: ${Math.random() * 4}s;
+      width: ${2 + Math.random() * 4}px;
+      height: ${2 + Math.random() * 4}px;
+    `;
+    starsContainer.appendChild(star);
+  }
+
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Counter animation
+  function animateCounter(el, target) {
+    let start = 0;
+    const duration = 2000;
+    const step = target / (duration / 16);
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= target) {
+        el.textContent = target >= 1000 ? (target/1000).toFixed(0)+'K+' : target + '+';
+        clearInterval(timer);
+      } else {
+        el.textContent = Math.floor(start) >= 1000 ? Math.floor(start/1000) + 'K' : Math.floor(start);
+      }
+    }, 16);
+  }
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.count);
+        animateCounter(el, target);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+  function handleSubmit() {
+    const btn = document.querySelector('.submit-btn');
+    btn.textContent = '✅ Enquiry Sent! We\'ll contact you soon.';
+    btn.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
+    setTimeout(() => {
+      btn.textContent = '🚀 Send Enquiry Now';
+      btn.style.background = '';
+    }, 4000);
+  }
+</script>
+</body>
+</html>
