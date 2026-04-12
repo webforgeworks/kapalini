@@ -1063,12 +1063,12 @@
   .banner-dot { color: var(--gold-light); font-size: 1rem; }
 
   @media (max-width: 900px) {
-    .hero-content, .about-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr; justify-items: center; }
+    .hero-content, .about-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr; }
     .products-grid { grid-template-columns: 1fr 1fr; } .testimonials-grid { grid-template-columns: 1fr; }
     .benefits-grid, .process-grid { grid-template-columns: 1fr 1fr; }
     .process-grid::before { display: none; }
     .nav-links { display: none; }
-    .hero-right { display: flex; transform: scale(0.6); width: 100%; justify-content: center; overflow: visible; padding: 0 60px; }
+    .hero-right { display: none; }
   }
 </style>
 </head>
